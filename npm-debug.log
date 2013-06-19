@@ -1,0 +1,49 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'thirty_two' ]
+2 info using npm@1.2.24
+3 info using node@v0.8.24
+4 verbose read json /Users/philipp/Documents/soupawise/node_modules/otp/package.json
+5 verbose read json /Users/philipp/Documents/soupawise/node_modules/otp/package.json
+6 verbose cache add [ 'thirty_two', null ]
+7 verbose cache add name=undefined spec="thirty_two" args=["thirty_two",null]
+8 verbose parsed url { pathname: 'thirty_two',
+8 verbose parsed url   path: 'thirty_two',
+8 verbose parsed url   href: 'thirty_two' }
+9 silly lockFile 75fe1e2c-thirty-two thirty_two
+10 verbose lock thirty_two /Users/philipp/.npm/75fe1e2c-thirty-two.lock
+11 silly lockFile 75fe1e2c-thirty-two thirty_two
+12 silly lockFile 75fe1e2c-thirty-two thirty_two
+13 verbose addNamed [ 'thirty_two', '' ]
+14 verbose addNamed [ null, '' ]
+15 silly lockFile e5d740d8-thirty-two thirty_two@
+16 verbose lock thirty_two@ /Users/philipp/.npm/e5d740d8-thirty-two.lock
+17 silly addNameRange { name: 'thirty_two', range: '', hasData: false }
+18 verbose url raw thirty_two
+19 verbose url resolving [ 'https://registry.npmjs.org/', './thirty_two' ]
+20 verbose url resolved https://registry.npmjs.org/thirty_two
+21 info trying registry request attempt 1 at 09:00:59
+22 http GET https://registry.npmjs.org/thirty_two
+23 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+24 info trying registry request attempt 2 at 09:01:09
+25 http GET https://registry.npmjs.org/thirty_two
+26 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+27 info trying registry request attempt 3 at 09:02:09
+28 http GET https://registry.npmjs.org/thirty_two
+29 silly lockFile e5d740d8-thirty-two thirty_two@
+30 silly lockFile e5d740d8-thirty-two thirty_two@
+31 error network getaddrinfo ENOTFOUND
+31 error network This is most likely not a problem with npm itself
+31 error network and is related to network connectivity.
+31 error network In most cases you are behind a proxy or have bad network settings.
+31 error network
+31 error network If you are behind a proxy, please make sure that the
+31 error network 'proxy' config is set properly.  See: 'npm help config'
+32 error System Darwin 12.4.0
+33 error command "node" "/usr/local/bin/npm" "install" "thirty_two"
+34 error cwd /Users/philipp/Documents/soupawise/node_modules/otp
+35 error node -v v0.8.24
+36 error npm -v 1.2.24
+37 error syscall getaddrinfo
+38 error code ENOTFOUND
+39 error errno ENOTFOUND
+40 verbose exit [ 1, true ]

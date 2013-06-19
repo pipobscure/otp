@@ -1,0 +1,18 @@
+{
+  "name":"otp",
+  "version":"0.1.0",
+  "description":"OTP utility for Google Authenticator",
+  "main":"otp.js",
+  "keywords":[ "one-time-password", "google authenticator", "hotp", "totp", "otp" ],
+  "author":{
+    "name":"Philipp Dunkel",
+    "email":"phidelta@phideltacity.net"
+  },
+  "repository":{
+    "type":"git",
+    "url":"git://github.com/phideltacity/otp"
+  },
+  "dependencies":{
+    "thirty-two":"*"
+  }
+}
