@@ -100,7 +100,7 @@ OTP.prototype.toJSON = function(options) {
   return res;
 };
 OTP.reviveJSON = function(key, val) {
-  if (val['class'] !== OTP.classID) return val;
+  if (('object' !== typeof val) || (null === val) || (val['class'] !== OTP.classID)) return val;
   return OTP(val);
 };
 
