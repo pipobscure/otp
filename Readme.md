@@ -1,4 +1,4 @@
-# OTP
+# OTP [![NPM](https://nodei.co/npm/otp.png)](https://nodei.co/npm/otp/)
 
 This is a utility to work with Google-Authenticator and compatible OTP-Mechanisms.
 
