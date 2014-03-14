@@ -1,18 +1,18 @@
 {
-  "name":"otp",
-  "version":"0.1.1",
-  "description":"OTP utility for Google Authenticator",
-  "main":"otp.js",
-  "keywords":[ "one-time-password", "google authenticator", "hotp", "totp", "otp" ],
-  "author":{
-    "name":"Philipp Dunkel",
-    "email":"phidelta@phideltacity.net"
+  "name": "otp",
+  "version": "0.1.2",
+  "description": "OTP utility for Google Authenticator",
+  "main": "otp.js",
+  "keywords": ["one-time-password", "google authenticator", "hotp", "totp", "otp"],
+  "author": {
+    "name": "Philipp Dunkel",
+    "email": "pip@pipobscure.com"
   },
-  "repository":{
-    "type":"git",
-    "url":"git://github.com/phideltacity/otp"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pipobscure/otp"
   },
-  "dependencies":{
-    "thirty-two":"*"
+  "dependencies": {
+    "thirty-two": "*"
   }
 }
