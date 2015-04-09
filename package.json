@@ -13,6 +13,6 @@
     "url": "git://github.com/pipobscure/otp"
   },
   "dependencies": {
-    "thirty-two": "*"
+    "thirty-two": "^0.0.2"
   }
 }
