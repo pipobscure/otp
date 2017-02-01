@@ -44,7 +44,7 @@ function generateKey(length) {
   while(res.length < length) {
     res += set[Math.floor(Math.random() * set.length)];
   }
-  return Base32.encode(res).replace(/=/g, '');;
+  return Base32.encode(res).toString().replace(/=/g, '');
 }
 
 OTP.parse = function(str, options) {
