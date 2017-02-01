@@ -1,6 +1,6 @@
 {
   "name": "otp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "OTP utility for Google Authenticator",
   "main": "otp.js",
   "keywords": ["one-time-password", "google authenticator", "hotp", "totp", "otp"],
