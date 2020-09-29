@@ -24,6 +24,7 @@
     "name": "Philipp Dunkel",
     "email": "pip@pipobscure.com"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/pipobscure/otp"
