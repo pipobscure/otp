@@ -84,7 +84,6 @@ function hotp(options: OTPOptions, counter: number): string {
 	return `${new Array(options.codeLength).fill('0')}${code}`.slice(-1 * options.codeLength);
 }
 function totp(options: OTPOptions, now: number = Date.now()): string {
-	console.error(now, options);
 	const counter = Math.floor((now - options.epoch * 1000) / (options.timeSlice * 1000));
 	return hotp(options, counter);
 }
