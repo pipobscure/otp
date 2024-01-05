@@ -17,7 +17,7 @@
 		"LICENSE.md"
 	],
 	"scripts": {
-		"build": "tsc && rollup -c && cp lib/otp.d.ts ./otp.d.ts",
+		"build": "tsc && rollup -c && cp build/otp.d.ts otp.d.ts",
 		"prepublishOnly": "npm run build"
 	},
 	"author": {
@@ -36,7 +36,6 @@
 		"@rollup/plugin-commonjs": "^22.0.1",
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"@types/node": "^14.11.2",
-		"@xutl/test": "^1.0.2",
 		"rollup": "^2.76.0",
 		"typescript": "^4.7.4"
 	}

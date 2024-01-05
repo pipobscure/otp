@@ -1,7 +1,6 @@
 node_modules/
 npm-debug.log
-
+build/
 *.js
 *.d.ts
-
 !rollup.config.js

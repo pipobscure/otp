@@ -89,16 +89,15 @@ function totp(options: OTPOptions, now: number = Date.now()): string {
 }
 
 function generateKey(length: number) {
-	const key = new Uint8Array(new Array(length).fill(0).map(() => Math.floor(Math.random() * 256)));
-	return Base32.encode(key);
+	const bytes = new Uint8Array(length);
+	globalThis.crypto.getRandomValues(bytes);
+	return Base32.encode(bytes);
 }
 function UInt64Buffer(num: number) {
-	const res = Buffer.alloc(8);
-	res.writeBigUInt64BE(BigInt(num));
-	return res;
+	const buffer = new ArrayBuffer(8);
+	new DataView(buffer).setBigUint64(0, BigInt(num))
+	return new Uint8Array(buffer);
 }
-
-const zeroBuffer = new Uint8Array(new Array(128).fill(0));
 
 class Hmac {
 	constructor(blocksize: number, key: Uint8Array) {
@@ -136,10 +135,10 @@ function rekey(key: Uint8Array, blocksize: number): Uint8Array {
 	if (key.length > blocksize) {
 		return Hash.hash(key);
 	}
-	if (key.length < blocksize) {
+	if (key.length < blocksize) {Hash
 		const res = new Uint8Array(blocksize);
 		res.set(key);
-		res.set(zeroBuffer, key.length);
+		res.fill(0, key.length);
 		return res;
 	}
 	return key;
