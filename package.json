@@ -18,7 +18,8 @@
 	],
 	"scripts": {
 		"build": "tsc && rollup -c && cp build/otp.d.ts otp.d.ts",
-		"prepublishOnly": "npm run build"
+		"prepublishOnly": "npm run build",
+		"postversion": "git push --follow-tags"
 	},
 	"author": {
 		"name": "Philipp Dunkel",
