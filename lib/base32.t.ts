@@ -1,4 +1,4 @@
-import { describe, it } from '@xutl/test';
+import { describe, it } from 'node:test';
 import { strictEqual } from 'node:assert';
 
 import { randomBytes } from 'node:crypto';
