@@ -15,7 +15,7 @@ export default class OTP {
 		if ('string' === typeof options) return OTP.parse(options);
 		options = Object.assign({}, options);
 		options.name = `${options.name || 'OTP-Authentication'}`.split(/[^\w|_|-|@]/).join('');
-		options.keySize = options.keySize === 128 ? 128 : 64;
+		options.keySize = options.keySize || 20;
 		options.codeLength = isNaN(options.codeLength) ? 6 : options.codeLength;
 		options.secret = options.secret || generateKey(options.keySize);
 		options.epoch = isNaN(options.epoch) ? 0 : options.epoch;
@@ -73,7 +73,7 @@ export default class OTP {
 }
 
 function hotp(options: OTPOptions, counter: number): string {
-	const digest = new Hmac(options.keySize, Base32.decode(options.secret)).update(UInt64Buffer(counter)).digest();
+	const digest = new Hmac(Base32.decode(options.secret)).update(UInt64Buffer(counter)).digest();
 	const offset = digest[19] & 0xf;
 	const code = String(
 		((digest[offset] & 0x7f) << 24) |
@@ -95,15 +95,13 @@ function generateKey(length: number) {
 }
 function UInt64Buffer(num: number) {
 	const buffer = new ArrayBuffer(8);
-	new DataView(buffer).setBigUint64(0, BigInt(num))
+	new DataView(buffer).setBigUint64(0, BigInt(num));
 	return new Uint8Array(buffer);
 }
 
 class Hmac {
-	constructor(blocksize: number, key: Uint8Array) {
-		if (blocksize !== 128 && blocksize !== 64) {
-			throw new Error('blocksize must be either 64 for or 128 , but was:' + blocksize);
-		}
+	constructor(key: Uint8Array) {
+		const blocksize = 64;
 		this.key = rekey(key, blocksize);
 		this.opad = new Uint8Array(new Array(blocksize).fill(0));
 		this.ipad = new Uint8Array(new Array(blocksize).fill(0));
@@ -135,7 +133,7 @@ function rekey(key: Uint8Array, blocksize: number): Uint8Array {
 	if (key.length > blocksize) {
 		return Hash.hash(key);
 	}
-	if (key.length < blocksize) {Hash
+	if (key.length < blocksize) {
 		const res = new Uint8Array(blocksize);
 		res.set(key);
 		res.fill(0, key.length);
