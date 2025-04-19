@@ -17,7 +17,7 @@ This is a utility to work with Google-Authenticator and compatible OTP-Mechanism
 Options can have the following properties:
 
 - **name**: A name used in generating URLs
-- **keySize**: The size of the OTP-Key (default 64) (possible values: 64 & 128)
+- **keySize**: The size of the OTP-Key in bytes (default 20). Used for generating a new secret
 - **codeLength**: The length of the code generated (default 6)
 - **secret**: The secret (either a Buffer of Base32-encoded String)
 - **epoch**: The seconds since Unix-Epoch to use as a base for calculating the TOTP (default 0)
