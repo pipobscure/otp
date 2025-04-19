@@ -26,7 +26,7 @@ export default class OTP {
 	}
 	private readonly options: OTPOptions;
 	public readonly hotp: (counter: number) => string;
-	public readonly totp: (now: number) => string;
+	public readonly totp: (now?: number) => string;
 
 	get name() {
 		return this.options.name;
