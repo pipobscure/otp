@@ -2,7 +2,8 @@
 	"name": "otp",
 	"version": "1.1.2",
 	"description": "OTP utility for Google Authenticator",
-	"main": "otp.js",
+	"exports": "./dist/otp.js",
+	"type": "module",
 	"keywords": [
 		"one-time-password",
 		"google authenticator",
@@ -17,9 +18,12 @@
 		"LICENSE.md"
 	],
 	"scripts": {
-		"build": "tsc && rollup -c && cp build/otp.d.ts otp.d.ts",
+		"build": "tsc --build --verbose",
 		"prepublishOnly": "npm run build",
-		"postversion": "git push --follow-tags"
+		"postversion": "git push --follow-tags",
+		"lint": "biome lint --write",
+		"format": "biome format --write",
+		"test": "node --test src/base32.t.ts"
 	},
 	"author": {
 		"name": "Philipp Dunkel",
@@ -30,14 +34,9 @@
 		"type": "git",
 		"url": "git://github.com/pipobscure/otp"
 	},
-	"dependencies": {
-		"sha1": "^1.1.1"
-	},
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "^22.0.1",
-		"@rollup/plugin-node-resolve": "^13.3.0",
+		"@pipobscure/biome": "^1.0.0",
 		"@types/node": "^20.10.6",
-		"rollup": "^2.76.0",
 		"typescript": "^5.3.3"
 	}
 }

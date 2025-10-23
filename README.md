@@ -8,8 +8,8 @@ This is a utility to work with Google-Authenticator and compatible OTP-Mechanism
 ## Main Function
 
     var otp = new OTP(options);
-    otp.hotp(counter); // Generates an OTP using HTOP method
-    otp.totp(); // Generates an OTP using TOTP method
+    otp.hotp(counter); // Generates an OTP using HTOP method (Promise)
+    otp.totp(); // Generates an OTP using TOTP method (Promise)
     otp.secret; // Base32 encoded secret
     otp.totpURL; // A TOTP-URL that can be used with Google-Authenticator
     otp.hotpURL; // A HOTP-URL that can be used with Google-Authenticator
