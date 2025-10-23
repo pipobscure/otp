@@ -1,6 +1,6 @@
 {
 	"name": "otp",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "OTP utility for Google Authenticator",
 	"exports": "./dist/otp.js",
 	"type": "module",
